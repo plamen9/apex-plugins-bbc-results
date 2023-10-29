@@ -27,7 +27,7 @@
                 "internalName": "REGION.MYCOMPANY.BBC_RESULTS",
                 "type": "template component",
                 "demo": "https://apex.oracle.com/pls/apex/r/gamma_dev/demo/bbc-results",
-                "previewImage": "https://raw.githubusercontent.com/plamen9/apex-plugins-bbc-results/main/demo_1.jpg"
+                "previewImage": "https://raw.githubusercontent.com/plamen9/apex-plugins-bbc-results/main/demo_1.png"
             }
         }
     }

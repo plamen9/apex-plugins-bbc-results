@@ -3,7 +3,7 @@
 [![APEX Built with Love](https://cdn.rawgit.com/Dani3lSun/apex-github-badges/7919f913/badges/apex-love-badge.svg)](https://apex.oracle.com/pls/apex/r/gamma_dev/demo/)
 
 ## Preview
-[![BBC Sports Result Template Component for APEX](https://cdn.hashnode.com/res/hashnode/image/upload/v1697037047986/09e58dc1-a60a-40a5-b501-603f6babc268.jpeg?auto=compress,format&format=webp)](https://cdn.hashnode.com/res/hashnode/image/upload/v1697037047986/09e58dc1-a60a-40a5-b501-603f6babc268.jpeg?auto=compress,format&format=webp)
+[![BBC Sports Result Template Component for APEX](https://raw.githubusercontent.com/plamen9/apex-plugins-bbc-results/main/demo_1.png)](https://raw.githubusercontent.com/plamen9/apex-plugins-bbc-results/main/demo_1.png)
 
 ## Description
 A Template Component for Oracle APEX (23.1 and above). `BBC Results` plugin allows you to display a single game result or a list of results.

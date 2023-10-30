@@ -70,7 +70,16 @@ where league = 'Premier League'
 ## Attributes
 | Attribute  | Description  | Examples |
 |---|---|---|
-| col1 | desc1 | example1 |
+| Home Team | The name of the Home Team. | West Ham |
+| Home Team Score | The score for the Home Team. If the match has not started yet, leave it null. | 1 |
+| Home Team Scorers | Provide a pipe "\|" delimited string of goal scorers. You could use listagg to generate such string. </br></br> select LISTAGG(scorer, '\| ') WITHIN GROUP (ORDER BY goal_time asc) home_team_scorers </br> from games </br> group by game_id | Plamen Mushkov (51', 88')\|Zlatan Ibrahimovic (70') |
+| Away Team | Name of the Away Team. | Millwall |
+| Away Team Score | The score for the Away Team. If the match has not started yet, leave it null. | 2 |
+| Away Team Scorers | Provide a pipe "\|" delimited string of goal scorers. You could use listagg to generate such string. </br></br> select LISTAGG(scorer, '\| ') WITHIN GROUP (ORDER BY goal_time asc) away_team_scorers </br> from games </br> group by game_id | Plamen Mushkov (51', 88')\|Zlatan Ibrahimovic (70') |
+| Game State | Game State should indicate if the game is yet to be played, is currently being played or has completed. The possible values are "COMPLETED", "LIVE" or null. Depending on the value specified, results will be coloured differently - light grey for the upcoming fixtures, blue for the live games and yellow for the completed ones. | COMPLETED </br> LIVE |
+| GAME URL | Use it to enable a link on the score. Standard options for an APEX link are available. | # |
+| Show Scorers | If enabled (and if there are any goalscorers), shows the goalscorers. Accepted values are 'Y' to show and 'N' or null to not show them. | 'Y' </br> 'N' </br> null |
+
 
 ## How it's made
 Curios to see how this plugin was created? </br>

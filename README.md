@@ -4,6 +4,7 @@
 
 ## Preview
 [![BBC Sports Result Template Component for APEX](https://raw.githubusercontent.com/plamen9/apex-plugins-bbc-results/main/demo_1.png)](https://raw.githubusercontent.com/plamen9/apex-plugins-bbc-results/main/demo_1.png)
+[![BBC Sports Result Template Component for APEX](https://raw.githubusercontent.com/plamen9/apex-plugins-bbc-results/main/demo_2.png)](https://raw.githubusercontent.com/plamen9/apex-plugins-bbc-results/main/demo_2.png)
 
 ## Description
 A Template Component for Oracle APEX (23.1 and above). `BBC Results` plugin allows you to display a single game result or a list of results.

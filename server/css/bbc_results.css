@@ -81,13 +81,13 @@
   width: 50%;
   min-width: 75px;
   font-size: 1rem; /* 0.9375rem; 15px;*/
-  line-height: 2rem; /* 1.125rem; 18px*/
+  line-height: 18px; /* 1.125rem; 18px*/
   font-weight: bold;
   color: #121212;
 }
 @media (min-width: 37.5em) {
   .sp-c-fixture__team {
-    line-height: 2rem; /* 1.125rem; 20px*/
+    line-height: 18px; /* 1.125rem; 20px*/
   }
   .no-touch .sp-c-fixture__team {
     font-size: 0.875rem; /* 14px;*/
@@ -214,8 +214,8 @@
   font-weight: bold !important;
   text-align: center;
   display: block;
-  /*padding-top: 4px;
-  padding-bottom: 4px;*/
+  padding-top: 5px;
+  padding-bottom: 5px;
   color: #121212;
 }
 .sp-c-fixture--live-session-header .sp-c-fixture__number {

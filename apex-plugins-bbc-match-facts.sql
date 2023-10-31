@@ -33,7 +33,7 @@ prompt APPLICATION 102 - plamen9-plugins
 -- Application Export:
 --   Application:     102
 --   Name:            plamen9-plugins
---   Date and Time:   21:40 Tuesday October 31, 2023
+--   Date and Time:   23:02 Tuesday October 31, 2023
 --   Exported By:     DEV
 --   Flashback:       0
 --   Export Type:     Component Export
@@ -101,6 +101,7 @@ wwv_flow_imp_shared.create_plugin(
 '                        AWAY_TEAM_SCORE:=#AWAY_TEAM_SCORE#',
 '                        AWAY_TEAM_SCORERS:=#AWAY_TEAM_SCORERS#',
 '                        GAME_STATE:=#GAME_STATE#',
+'                        STATUS_LABEL:=#STATUS_LABEL#',
 '                        SHOW_SCORERS:=#SHOW_SCORERS#',
 '                     {apply BBC_RESULTS/}   ',
 '                  </div>',
@@ -380,6 +381,22 @@ wwv_flow_imp_shared.create_plugin_attribute(
 '''N''',
 'null'))
 ,p_help_text=>'If enabled (and if there are any goalscorers), shows the goalscorers. Accepted values are ''Y'' to show and ''N'' or null to not show them.'
+);
+wwv_flow_imp_shared.create_plugin_attribute(
+ p_id=>wwv_flow_imp.id(9935398996985351)
+,p_plugin_id=>wwv_flow_imp.id(9895242149197015)
+,p_attribute_scope=>'REPORT'
+,p_attribute_sequence=>15
+,p_display_sequence=>150
+,p_static_id=>'STATUS_LABEL'
+,p_prompt=>'Status Label'
+,p_attribute_type=>'SESSION STATE VALUE'
+,p_is_required=>false
+,p_escape_mode=>'HTML'
+,p_column_data_types=>'VARCHAR2'
+,p_is_translatable=>false
+,p_attribute_group_id=>wwv_flow_imp.id(9904340617283825)
+,p_help_text=>'Status Label is the text that will be displayed below the score of the game. It could be "FT", "HT", "15 mins" (if the game is currently running) or "19:45" (or "Sep 20 19:45")if the game has not started yet.'
 );
 end;
 /

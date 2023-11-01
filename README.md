@@ -166,7 +166,7 @@ join match_score s
 | Is Percentage | Used to determine if the value displayed should include the % sign. Accepted values are 'Y' to show and 'N' or null to not show them.  | 'Y' </br> 'N' </br> null |
 | AAA | BBB | CCC |
 | Home Team Value | Value of the fact for the Home team. It is the label, displayed on the left side of the chart. | 19 |
-| Home Team Value (in percent) | Value (in percent, out of 100%) of the fact for the Home team. It is used to display the chart correctly. Home team value in percent and Away Team value in percent shoub add to 100%. | 63.33% |
+| Home Team Value (in percent) | Value (in percent, out of 100%) of the fact for the Home team. It is used to display the chart correctly. Home team value in percent and Away Team value in percent shoub add to 100%. | 63.33|
 | Away Team Value | Value of the fact for the Away team. It is the label, displayed on the right side of the chart. | 11 |
 | Away Team Value (in percent) | Value (in percent, out of 100%) of the fact for the Away team. It is used to display the chart correctly. Away team value in percent and Home Team value in percent shoub add to 100. | 36.67 |
 

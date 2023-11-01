@@ -20,7 +20,7 @@ A Template Component for Oracle APEX (23.1 and above).
 [https://apex.oracle.com/pls/apex/r/gamma_dev/demo/bbc-results](https://apex.oracle.com/pls/apex/r/gamma_dev/demo/bbc-results)
 
 ## Installation
-> *Note: While importing the plugins, select the `-No Theme-` option for `Install Into Theme` question. If you select `42. Universal Theme`, the plugin will be installed into **Shared Components** \ **Templates**, instead of **Plugins** and its' identifier will be changed from `BBC_RESULTS` to `THEME$BBC_RESULTS`. If you still want to use this option, make sure to change the reference to the `BBC_RESULTS` in `BBC_MATCH_FACTS`. This is on line 28 in the `Report Body` section. This should be changed from `{apply BBC_RESULTS/}` to this -> `{apply THEME$BBC_RESULTS/}`.
+> *Note: While importing the plugins, select the `-No Theme-` option for `Install Into Theme` question. If you select `42. Universal Theme`, the plugin will be installed into **Shared Components** \ **Templates**, instead of **Plugins** and its' identifier will be changed from `BBC_RESULTS` to `THEME$BBC_RESULTS`. If you still want to use this option, make sure to change the reference to the `BBC_RESULTS` in `BBC_MATCH_FACTS`. This is on line 28 in the `Report Body` section. This should be changed from `{apply BBC_RESULTS/}` to `{apply THEME$BBC_RESULTS/}`.
  
 1. Import plugin file `apex-plugins-bbc-results.sql` into your application. 
 2. Import plugin file `apex-plugins-bbc-match-facts.sql` into your application.

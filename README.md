@@ -78,7 +78,7 @@ where league = 'Premier League'
 
 # `BBC Match Facts` Template Component
 
-## Common Attributes
+## Common Attributes for both Template Components
 | Attribute  | Description  | Examples |
 |---|---|---|
 | Home Team | The name of the Home Team. | West Ham |
@@ -91,6 +91,16 @@ where league = 'Premier League'
 | GAME URL | Use it to enable a link on the score. Standard options for an APEX link are available. | # |
 | Show Scorers | If enabled (and if there are any goalscorers), shows the goalscorers. Accepted values are 'Y' to show and 'N' or null to not show them. | 'Y' </br> 'N' </br> null |
 
+## Additional Attributes for `BBC Match Facts` Template Component
+| Attribute  | Description  | Examples |
+|---|---|---|
+| Fact Name | The name of the fact to display. It is displayed on top of the values. | Shots on Target |
+| Is Percentage | Used to determine if the value displayed should include the % sign. Accepted values are 'Y' to show and 'N' or null to not show them.  | 'Y' </br> 'N' </br> null |
+| AAA | BBB | CCC |
+| Home Team Value | Value of the fact for the Home team. It is the label, displayed on the left side of the chart. | 19 |
+| Home Team Value (in percent) | Value (in percent, out of 100%) of the fact for the Home team. It is used to display the chart correctly. Home team value in percent and Away Team value in percent shoub add to 100%. | 63.33% |
+| Away Team Value | Value of the fact for the Away team. It is the label, displayed on the right side of the chart. | 11 |
+| Away Team Value (in percent) | Value (in percent, out of 100%) of the fact for the Away team. It is used to display the chart correctly. Away team value in percent and Home Team value in percent shoub add to 100. | 36.67 |
 
 ## How it's made
 Curios to see how this plugin was created? </br>

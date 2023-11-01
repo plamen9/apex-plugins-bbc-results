@@ -33,7 +33,7 @@ prompt APPLICATION 102 - plamen9-plugins
 -- Application Export:
 --   Application:     102
 --   Name:            plamen9-plugins
---   Date and Time:   23:02 Tuesday October 31, 2023
+--   Date and Time:   14:13 Wednesday November 1, 2023
 --   Exported By:     DEV
 --   Flashback:       0
 --   Export Type:     Component Export
@@ -156,6 +156,8 @@ wwv_flow_imp_shared.create_plugin_attribute(
 ,p_column_data_types=>'VARCHAR2:NUMBER'
 ,p_is_translatable=>false
 ,p_attribute_group_id=>wwv_flow_imp.id(9904778736283825)
+,p_examples=>'11'
+,p_help_text=>'Value of the fact for the Away team. It is the label, displayed on the right side of the chart.'
 );
 wwv_flow_imp_shared.create_plugin_attribute(
  p_id=>wwv_flow_imp.id(9895882810197083)
@@ -171,6 +173,8 @@ wwv_flow_imp_shared.create_plugin_attribute(
 ,p_column_data_types=>'NUMBER'
 ,p_is_translatable=>false
 ,p_attribute_group_id=>wwv_flow_imp.id(9904778736283825)
+,p_examples=>'36.67'
+,p_help_text=>'Value (in percent, out of 100%) of the fact for the Away team. It is used to display the chart correctly. Away team value in percent and Home Team value in percent shoub add to 100.'
 );
 wwv_flow_imp_shared.create_plugin_attribute(
  p_id=>wwv_flow_imp.id(9896264806197083)
@@ -186,6 +190,8 @@ wwv_flow_imp_shared.create_plugin_attribute(
 ,p_column_data_types=>'VARCHAR2'
 ,p_is_translatable=>false
 ,p_attribute_group_id=>wwv_flow_imp.id(9904778736283825)
+,p_examples=>'Shots on Target'
+,p_help_text=>'The name of the fact to display. It is displayed on top of the values.'
 );
 wwv_flow_imp_shared.create_plugin_attribute(
  p_id=>wwv_flow_imp.id(9896660384197083)
@@ -201,6 +207,8 @@ wwv_flow_imp_shared.create_plugin_attribute(
 ,p_column_data_types=>'VARCHAR2:NUMBER'
 ,p_is_translatable=>false
 ,p_attribute_group_id=>wwv_flow_imp.id(9904778736283825)
+,p_examples=>'15'
+,p_help_text=>'Value of the fact for the Home team. It is the label, displayed on the left side of the chart.'
 );
 wwv_flow_imp_shared.create_plugin_attribute(
  p_id=>wwv_flow_imp.id(9897064120197083)
@@ -216,6 +224,8 @@ wwv_flow_imp_shared.create_plugin_attribute(
 ,p_column_data_types=>'NUMBER'
 ,p_is_translatable=>false
 ,p_attribute_group_id=>wwv_flow_imp.id(9904778736283825)
+,p_examples=>'63.33'
+,p_help_text=>'Value (in percent, out of 100%) of the fact for the Home team. It is used to display the chart correctly. Home team value in percent and Away Team value in percent shoub add to 100.'
 );
 wwv_flow_imp_shared.create_plugin_attribute(
  p_id=>wwv_flow_imp.id(9897427606197084)
@@ -231,6 +241,11 @@ wwv_flow_imp_shared.create_plugin_attribute(
 ,p_column_data_types=>'VARCHAR2'
 ,p_is_translatable=>false
 ,p_attribute_group_id=>wwv_flow_imp.id(9904778736283825)
+,p_examples=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'''Y''',
+'''N''',
+'null'))
+,p_help_text=>'Used to determine if the value displayed should include the % sign. Accepted values are ''Y'' to show and ''N'' or null to not show them.'
 );
 wwv_flow_imp_shared.create_plugin_attribute(
  p_id=>wwv_flow_imp.id(9897831964197085)

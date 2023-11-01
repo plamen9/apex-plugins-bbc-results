@@ -78,6 +78,74 @@ where league = 'Premier League'
 
 # `BBC Match Facts` Template Component
 
+## Usage
+🔸 As a `Multiple (Report)`
+- Create a new Region of type `BBC Match Facts`. You can use any type of source for the data. Here is an example of a `SQL Query`:
+```sql
+with match_score as (
+   select 1 game_id,
+         'CSKA Sofia' home_team, 3 home_team_score,
+         'Plamen Mushkov (15'')|Plamen Mushkov (62'')|Plamen Mushkov (70'')' home_team_scorers,
+         'Levski Sofia' away_team, 0 away_team_score, 
+         null away_team_scorers,
+         'COMPLETED' game_state, 'FT' STATUS_LABEL, null game_url, /*:P2_SHOW_SCORERS*/ 'Y' show_scorers
+   from dual ),
+
+match_facts as (
+   select 1 game_id, 'Possession'      fact_name, 38 home_team_val, 62 away_team_val, 'Y' is_percentage from dual union all
+   select 1 game_id, 'Shots'           fact_name, 19 home_team_val, 11 away_team_val, 'N' is_percentage from dual union all
+   select 1 game_id, 'Shots on Target' fact_name,  9 home_team_val,  3 away_team_val, 'N' is_percentage from dual union all
+   select 1 game_id, 'Corners'         fact_name,  1 home_team_val,  3 away_team_val, 'N' is_percentage from dual union all
+   select 1 game_id, 'Fouls'           fact_name, 19 home_team_val, 21 away_team_val, 'N' is_percentage from dual
+)
+
+select f.game_id, f.fact_name, f.is_percentage,
+       f.home_team_val, round(f.home_team_val/(f.home_team_val+f.away_team_val)*100,2) home_team_val_perc,
+       f.away_team_val, round(f.away_team_val/(f.home_team_val+f.away_team_val)*100,2) away_team_val_perc,
+       s.home_team, s.home_team_score, s.home_team_scorers, 
+       s.away_team, s.away_team_score, s.away_team_scorers,
+       s.game_state, s.status_label, s.game_url, s.show_scorers
+from match_facts f
+join match_score s
+   on f.game_id = s.game_id
+```
+- Go to the Region `Attributes` section. From `Appearance` \ `Diisplay` select `Multiple (Report)`.
+- Map the query columns to the relevant attributes from the list (full list of options and their description - below).
+
+🔸 As a column in a `Classic Report`, `Interactive Report` or `Interactive Grid`
+- Create a new Region of type `Classic Report`, `Interactive Report` or `Interactive Grid`.  You can use any type of source for the data. Here is an example of a `SQL Query`:
+```sql
+with match_score as (
+   select game_id, home_team, home_team_score, home_team_scorers,
+          away_team, away_team_score, away_team_scorers,
+          game_state, status_label, game_url, show_scorers
+   from dual ),
+
+match_facts as (
+   select 1 game_id, 'Possession'      fact_name, 38 home_team_val, 62 away_team_val, 'Y' is_percentage from dual union all
+   select 1 game_id, 'Shots'           fact_name, 19 home_team_val, 11 away_team_val, 'N' is_percentage from dual union all
+   select 1 game_id, 'Shots on Target' fact_name,  9 home_team_val,  3 away_team_val, 'N' is_percentage from dual union all
+   select 1 game_id, 'Corners'         fact_name,  1 home_team_val,  3 away_team_val, 'N' is_percentage from dual union all
+   select 1 game_id, 'Fouls'           fact_name, 19 home_team_val, 21 away_team_val, 'N' is_percentage from dual
+)
+
+select f.game_id, f.fact_name, f.is_percentage,
+       f.home_team_val, round(f.home_team_val/(f.home_team_val+f.away_team_val)*100,2) home_team_val_perc,
+       f.away_team_val, round(f.away_team_val/(f.home_team_val+f.away_team_val)*100,2) away_team_val_perc,
+       s.home_team, s.home_team_score, s.home_team_scorers, 
+       s.away_team, s.away_team_score, s.away_team_scorers,
+       s.game_state, s.status_label, s.game_url, s.show_scorers,
+       s.home_team||' '||s.home_team_score||':'||s.away_team_score||' '||s.away_team game_score,
+       null game_stats
+from match_facts f
+join match_score s
+   on f.game_id = s.game_id;
+```
+- The column, named `game_stats` (or any other name that you choose to use) should be of type `BBC Match Facts`.
+- After changing the type to `BBC Match Facts`, all of the Attributes for the Tempalte Component will be available below.
+- Map the query columns to the relevant attributes from the list, similar to the previous two scenarios (full list of options and their description - below).
+> Tip: You can make most columns hidden and leave just `game_score` and `game_stats` from the query above. Then use the IR `Format\Control Break` functionality to group the stats.
+
 ## Common Attributes for both Template Components
 | Attribute  | Description  | Examples |
 |---|---|---|

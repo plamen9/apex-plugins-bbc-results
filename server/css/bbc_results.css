@@ -37,7 +37,7 @@
   color: #fff;
 }
 .sp-c-fixture__wrapper {
-  display: table;
+  display: flex;
   width: 100%;
   margin-bottom: 4px;
 }
